@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberOfQuestions: UITextField!
     @IBOutlet weak var studentAnswers: UITextField!
     @IBOutlet weak var correctAnswers: UITextField!
+    @IBOutlet weak var outputLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +21,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func checkAnswers(_ sender: Any) {
+        
+        guard let numberOfQuestionsAsString = numberOfQuestions.text, numberOfQuestionsAsString.count > 0 else {
+        outputLabel.text = "Please enter an integer value greater than 0."
+      return
     }
     
-    
-    
+
+    }
 
 }
-
